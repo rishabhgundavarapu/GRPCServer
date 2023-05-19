@@ -1,0 +1,23 @@
+// rgundavarapu@wisc.edu
+// simran4@wisc.edu
+syntax = 'proto3';
+
+service NumStore {
+rpc SetNum(SetNumRequest) returns (SetNumResponse);
+rpc Fact(FactRequest) returns (FactResponse);
+}
+message SetNumRequest{
+	int64 value=1;
+    string key=2;
+}
+message SetNumResponse{
+	int64 total=2;
+}
+message FactRequest{
+	string key=1;
+}
+message FactResponse{
+	int64 value=3;
+	bool hit=5;
+	string error=1;
+}
